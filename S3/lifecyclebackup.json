@@ -1,0 +1,24 @@
+{
+    "Rules": [
+        {
+            "Expiration": {
+                "Days": 8
+            },
+            "ID": "Lifecycle Backup",
+            "Filter": {},
+            "Status": "Enabled",
+            "Transitions": [
+                {
+                    "Days": 7,
+                    "StorageClass": "DEEP_ARCHIVE"
+                }
+            ],
+            "NoncurrentVersionExpiration": {
+                "NoncurrentDays": 4
+            },
+            "AbortIncompleteMultipartUpload": {
+                "DaysAfterInitiation": 2
+            }
+        }
+    ]
+}

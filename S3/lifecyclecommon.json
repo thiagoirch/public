@@ -1,0 +1,34 @@
+{
+    "Rules": [
+        {
+            "Expiration": {
+                "ExpiredObjectDeleteMarker": true
+            },
+            "ID": "Expire Object Versions",
+            "Filter": {
+                "Prefix": ""
+            },
+            "Status": "Enabled",
+            "NoncurrentVersionExpiration": {
+                "NoncurrentDays": 3
+            },
+            "AbortIncompleteMultipartUpload": {
+                "DaysAfterInitiation": 3
+            }
+        },
+        {
+            "ID": "Lifecycle Common",
+            "Filter": {},
+            "Status": "Enabled",
+            "NoncurrentVersionTransitions": [
+                {
+                    "NoncurrentDays": 1,
+                    "StorageClass": "DEEP_ARCHIVE"
+                }
+            ],
+            "NoncurrentVersionExpiration": {
+                "NoncurrentDays": 2
+            }
+        }
+    ]
+}

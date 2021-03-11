@@ -1,0 +1,30 @@
+{
+  "Rules": [
+    {
+      "Status": "Enabled",
+      "NoncurrentVersionExpiration": {
+        "NoncurrentDays": 4
+      },
+      "Prefix": "",
+      "Expiration": {
+        "ExpiredObjectDeleteMarker": true
+      },
+      "AbortIncompleteMultipartUpload": {
+        "DaysAfterInitiation": 4
+      },
+      "ID": "Expire Object Versions & Abort Incomplete Multipart Upload"
+    },
+    {
+      "Status": "Enabled",
+      "Prefix": "",
+      "Expiration": {
+        "Days": 4
+      },
+      "Transitions": {
+        "Days": 3,
+        "StorageClass": "DEEP_ARCHIVE"
+      },
+      "ID": "3 Days DEEP_ARCHIVE Lifecycle & 4 Days Expiration"
+    }
+  ]
+}
